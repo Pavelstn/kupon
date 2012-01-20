@@ -1,5 +1,5 @@
 <h1>Listing promotions</h1>
-
+<%= link_to 'New Promotion', new_promotion_path %>
 <table>
   <tr>
     <th>Region</th>
@@ -13,9 +13,7 @@
     <th>Start action</th>
     <th>Stop action</th>
     <th>Title</th>
-    <th>Short description</th>
-    <th>Description</th>
-    <th>Terms</th>
+
     <th>Costs</th>
     <th>Volume</th>
     <th>Left</th>
@@ -28,7 +26,7 @@
   <tr>
     <td><%= promotion.region_id %></td>
     <td><%= promotion.partner_id %></td>
-    <td><%= promotion.category_id %></td>
+    <td><%= promotion.category.name %></td>
     <td><%= promotion.user_id %></td>
     <td><%= promotion.is_active %></td>
     <td><%= promotion.is_delete %></td>
@@ -37,9 +35,7 @@
     <td><%= promotion.start_action %></td>
     <td><%= promotion.stop_action %></td>
     <td><%= promotion.title %></td>
-    <td><%= promotion.short_description %></td>
-    <td><%= promotion.description %></td>
-    <td><%= promotion.terms %></td>
+
     <td><%= promotion.costs %></td>
     <td><%= promotion.volume %></td>
     <td><%= promotion.left %></td>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120120134311) do
+ActiveRecord::Schema.define(:version => 20120120162919) do
 
   create_table "akupons", :force => true do |t|
     t.integer  "promotion_id"
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(:version => 20120120134311) do
     t.string   "unique_code"
     t.boolean  "is_delete"
     t.boolean  "is_canceled"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "region_id"
+    t.boolean  "is_avtive"
+    t.boolean  "is_delete"
+    t.string   "who_delete"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,6 +54,16 @@ ActiveRecord::Schema.define(:version => 20120120134311) do
     t.float    "costs"
     t.integer  "volume"
     t.integer  "left"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "regions", :force => true do |t|
+    t.string   "name_region"
+    t.text     "description"
+    t.boolean  "is_active"
+    t.boolean  "is_delete"
+    t.string   "who_delete"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

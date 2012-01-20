@@ -12,7 +12,7 @@
 
 <p>
   <b>Category:</b>
-  <%= @promotion.category_id %>
+  <%= @promotion.category.name %>
 </p>
 
 <p>
@@ -84,7 +84,9 @@
   <b>Left:</b>
   <%= @promotion.left %>
 </p>
+<%#*<h2><%= link_to 'Edit', buyit_promotion_path(@promotion) %> |</h2>%>
 
+<h2><%= link_to "Купить", :controller => "promotions", :action => "buyit", :id => @promotion  %></h2>
 
 <%= link_to 'Edit', edit_promotion_path(@promotion) %> |
 <%= link_to 'Back', promotions_path %>

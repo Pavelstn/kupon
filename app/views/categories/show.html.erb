@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @category.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @category.description %>
+</p>
+ <% if current_user.role=="admin" %>
+<p>
+  <b>Region:</b>
+  <%= @category.region_id %>
+</p>
+
+<p>
+  <b>Is avtive:</b>
+  <%= @category.is_avtive %>
+</p>
+
+<p>
+  <b>Is delete:</b>
+  <%= @category.is_delete %>
+</p>
+
+<p>
+  <b>Who delete:</b>
+  <%= @category.who_delete %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>
+<hr>
+<% @category.promotion.each do |promotion| %>
+<%= promotion.title %> <%= promotion.costs %> <%= link_to 'More', promotion %>
+<hr>
+<% end %>

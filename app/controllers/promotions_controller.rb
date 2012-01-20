@@ -35,6 +35,7 @@ class PromotionsController < ApplicationController
   # GET /promotions/1/edit
   def edit
     @promotion = Promotion.find(params[:id])
+  #  @categories = Category.all
   end
 
   # POST /promotions
@@ -79,5 +80,17 @@ class PromotionsController < ApplicationController
       format.html { redirect_to promotions_url }
       format.json { head :ok }
     end
+  end
+  
+  def buyit
+    @akupon = Akupon.new
+    @akupon.promotion_id=params[:id]
+    @akupon.user_id=current_user.id
+    @akupon.purchase= Date.today
+    @akupon.unique_code="safdfjioewroiwyr"
+    @akupon.is_canceled= false
+    @akupon.is_delete= false
+    @akupon.save
+    redirect_to promotion_path(@post)
   end
 end

@@ -1,4 +1,8 @@
 Kupon::Application.routes.draw do
+  resources :regions
+
+  resources :categories
+
   resources :akupons
 
   get "main/index"
@@ -6,6 +10,7 @@ Kupon::Application.routes.draw do
   devise_for :users
 
   resources :promotions
+  match 'promotions/:id/buyit' => 'promotions#buyit', :id => :id
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -56,7 +61,7 @@ Kupon::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'main#index'
+  root :to => 'main#index'
 
   # See how all your routes lay out with "rake routes"
 

@@ -16,8 +16,8 @@
 
 <% @akupons.each do |akupon| %>
   <tr>
-    <td><%= akupon.promotion_id %></td>
-    <td><%= akupon.user_id %></td>
+    <td><%= akupon.promotion.title %></td>
+    <td><%= akupon.user.email %></td>
     <td><%= akupon.purchase %></td>
     <td><%= akupon.use %></td>
     <td><%= akupon.unique_code %></td>
