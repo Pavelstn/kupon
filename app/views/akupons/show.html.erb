@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Promotion:</b>
+  <%= @akupon.promotion_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @akupon.user_id %>
+</p>
+
+<p>
+  <b>Purchase:</b>
+  <%= @akupon.purchase %>
+</p>
+
+<p>
+  <b>Use:</b>
+  <%= @akupon.use %>
+</p>
+
+<p>
+  <b>Unique code:</b>
+  <%= @akupon.unique_code %>
+</p>
+
+<p>
+  <b>Is delete:</b>
+  <%= @akupon.is_delete %>
+</p>
+
+<p>
+  <b>Is canceled:</b>
+  <%= @akupon.is_canceled %>
+</p>
+
+
+<%= link_to 'Edit', edit_akupon_path(@akupon) %> |
+<%= link_to 'Back', akupons_path %>

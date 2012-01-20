@@ -1,0 +1,85 @@
+<%= form_for(@promotion) do |f| %>
+  <% if @promotion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@promotion.errors.count, "error") %> prohibited this promotion from being saved:</h2>
+
+      <ul>
+      <% @promotion.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :region_id %><br />
+    <%= f.number_field :region_id %>
+  </div>
+  <div class="field">
+    <%= f.label :partner_id %><br />
+    <%= f.number_field :partner_id %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br />
+    <%= f.number_field :category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :is_active %><br />
+    <%= f.check_box :is_active %>
+  </div>
+  <div class="field">
+    <%= f.label :is_delete %><br />
+    <%= f.check_box :is_delete %>
+  </div>
+  <div class="field">
+    <%= f.label :who_delete %><br />
+    <%= f.text_field :who_delete %>
+  </div>
+  <div class="field">
+    <%= f.label :on_top %><br />
+    <%= f.check_box :on_top %>
+  </div>
+  <div class="field">
+    <%= f.label :start_action %><br />
+    <%= f.date_select :start_action %>
+  </div>
+  <div class="field">
+    <%= f.label :stop_action %><br />
+    <%= f.date_select :stop_action %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :short_description %><br />
+    <%= f.text_area :short_description %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :terms %><br />
+    <%= f.text_area :terms %>
+  </div>
+  <div class="field">
+    <%= f.label :costs %><br />
+    <%= f.text_field :costs %>
+  </div>
+  <div class="field">
+    <%= f.label :volume %><br />
+    <%= f.number_field :volume %>
+  </div>
+  <div class="field">
+    <%= f.label :left %><br />
+    <%= f.number_field :left %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

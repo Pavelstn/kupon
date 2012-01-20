@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  promotion_id: 1
+  user_id: 1
+  purchase: 2012-01-20
+  use: 2012-01-20
+  unique_code: MyString
+  is_delete: false
+  is_canceled: false
+
+two:
+  promotion_id: 1
+  user_id: 1
+  purchase: 2012-01-20
+  use: 2012-01-20
+  unique_code: MyString
+  is_delete: false
+  is_canceled: false

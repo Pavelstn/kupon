@@ -1,0 +1,45 @@
+<%= form_for(@akupon) do |f| %>
+  <% if @akupon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@akupon.errors.count, "error") %> prohibited this akupon from being saved:</h2>
+
+      <ul>
+      <% @akupon.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :promotion_id %><br />
+    <%= f.number_field :promotion_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :purchase %><br />
+    <%= f.date_select :purchase %>
+  </div>
+  <div class="field">
+    <%= f.label :use %><br />
+    <%= f.date_select :use %>
+  </div>
+  <div class="field">
+    <%= f.label :unique_code %><br />
+    <%= f.text_field :unique_code %>
+  </div>
+  <div class="field">
+    <%= f.label :is_delete %><br />
+    <%= f.check_box :is_delete %>
+  </div>
+  <div class="field">
+    <%= f.label :is_canceled %><br />
+    <%= f.check_box :is_canceled %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

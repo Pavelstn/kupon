@@ -1,0 +1,90 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Region:</b>
+  <%= @promotion.region_id %>
+</p>
+
+<p>
+  <b>Partner:</b>
+  <%= @promotion.partner_id %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @promotion.category_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @promotion.user_id %>
+</p>
+
+<p>
+  <b>Is active:</b>
+  <%= @promotion.is_active %>
+</p>
+
+<p>
+  <b>Is delete:</b>
+  <%= @promotion.is_delete %>
+</p>
+
+<p>
+  <b>Who delete:</b>
+  <%= @promotion.who_delete %>
+</p>
+
+<p>
+  <b>On top:</b>
+  <%= @promotion.on_top %>
+</p>
+
+<p>
+  <b>Start action:</b>
+  <%= @promotion.start_action %>
+</p>
+
+<p>
+  <b>Stop action:</b>
+  <%= @promotion.stop_action %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @promotion.title %>
+</p>
+
+<p>
+  <b>Short description:</b>
+  <%= @promotion.short_description %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @promotion.description %>
+</p>
+
+<p>
+  <b>Terms:</b>
+  <%= @promotion.terms %>
+</p>
+
+<p>
+  <b>Costs:</b>
+  <%= @promotion.costs %>
+</p>
+
+<p>
+  <b>Volume:</b>
+  <%= @promotion.volume %>
+</p>
+
+<p>
+  <b>Left:</b>
+  <%= @promotion.left %>
+</p>
+
+
+<%= link_to 'Edit', edit_promotion_path(@promotion) %> |
+<%= link_to 'Back', promotions_path %>

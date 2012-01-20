@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kupon</title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <a href="/main/index">Главная</a>|
+    <a href="/promotions">Акции</a>|
+    <a href="/akupons">Мои купоны</a>|
+
+
+    <% if user_signed_in? %>
+      user: <%= current_user.email %>|
+      id: <%= current_user.id %>|
+      role: <%= current_user.role %>|
+      <%= link_to('logout', destroy_user_session_path, :method => 'delete') %>|
+    <% else %>
+      <a href="/users/sign_in">login</a>|
+      <a href="/users/sign_up">register</a>|
+    <% end %>
+
+    <hr>
+
+    <%= yield %>
+
+  </body>
+</html>
