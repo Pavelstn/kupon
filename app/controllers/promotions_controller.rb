@@ -91,6 +91,7 @@ class PromotionsController < ApplicationController
     @akupon.is_canceled= false
     @akupon.is_delete= false
     @akupon.save
-    redirect_to promotion_path(@post)
+  #  redirect_to promotion_path(@post)
+  redirect_to akupon_path(@akupon)
   end
 end
