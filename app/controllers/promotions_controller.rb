@@ -1,6 +1,9 @@
 class PromotionsController < ApplicationController
   # GET /promotions
   # GET /promotions.json
+  load_and_authorize_resource
+  #before_filter :authenticate_user!, :only=>[:show]
+  before_filter :authenticate_user!, :except => [:index, :show]
   def index
     @promotions = Promotion.all
 
@@ -35,7 +38,7 @@ class PromotionsController < ApplicationController
   # GET /promotions/1/edit
   def edit
     @promotion = Promotion.find(params[:id])
-  #  @categories = Category.all
+    #  @categories = Category.all
   end
 
   # POST /promotions
@@ -83,6 +86,7 @@ class PromotionsController < ApplicationController
   end
   
   def buyit
+    authorize! :buyit, Promotion
     @akupon = Akupon.new
     @akupon.promotion_id=params[:id]
     @akupon.user_id=current_user.id
@@ -91,7 +95,7 @@ class PromotionsController < ApplicationController
     @akupon.is_canceled= false
     @akupon.is_delete= false
     @akupon.save
-  #  redirect_to promotion_path(@post)
-  redirect_to akupon_path(@akupon)
+    #  redirect_to promotion_path(@post)
+    redirect_to akupon_path(@akupon)
   end
 end

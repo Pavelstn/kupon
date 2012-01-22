@@ -1,8 +1,13 @@
 class AkuponsController < ApplicationController
+  before_filter :authenticate_user!
+  #check_authorization
+  load_and_authorize_resource
   # GET /akupons
   # GET /akupons.json
   def index
-    @akupons = Akupon.all
+    # authorize! :index, Akupon
+    @akupons = Akupon.where(:user_id => current_user.id)
+    #   @akupons = Akupon.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,12 +18,32 @@ class AkuponsController < ApplicationController
   # GET /akupons/1
   # GET /akupons/1.json
   def show
-    @akupon = Akupon.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @akupon }
+    #          begin
+    #        user.destroy
+    #        flash[:notice] = "User #{user.name} deleted"
+    #      rescue Exception => e
+    #        flash[:notice] = e.message
+    #      end
+    #    
+    begin
+      @akupon = Akupon.where(:user_id => current_user.id, :id=>params[:id]).first
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @akupon }
+      end
+    rescue
+      redirect_to akupons_url
     end
+    
+    
+    #    #@akupon = Akupon.find(2)
+    #    @akupon = Akupon.where(:user_id => current_user.id, :id=>params[:id]).first
+    #    #@akupon = Akupon.where(:id => current_user.id).first
+    #
+    #    respond_to do |format|
+    #      format.html # show.html.erb
+    #      format.json { render json: @akupon }
+    #    end
   end
 
   # GET /akupons/new
