@@ -24,7 +24,7 @@
 
 <% @promotions.each do |promotion| %>
   <tr>
-    <td><%= promotion.region_id %></td>
+    <td><%= promotion.region.name_region %></td>
     <td><%= promotion.partner_id %></td>
     <td><%= promotion.category.name %></td>
     <td><%= promotion.user_id %></td>

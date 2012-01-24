@@ -6,6 +6,7 @@ class Ability
     can :read, Region
     can :read, Category
     can :read, Promotion
+    
     # cannot :read, Akupon
     #    
     if user.role =="admin"

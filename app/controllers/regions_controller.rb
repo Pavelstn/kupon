@@ -1,6 +1,7 @@
 class RegionsController < ApplicationController
   # GET /regions
   # GET /regions.json
+  load_and_authorize_resource
   def index
     @regions = Region.all
 
