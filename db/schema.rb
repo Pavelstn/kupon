@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120120162919) do
+ActiveRecord::Schema.define(:version => 20120124144826) do
 
   create_table "akupons", :force => true do |t|
     t.integer  "promotion_id"
@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(:version => 20120120162919) do
     t.datetime "updated_at"
     t.string   "username"
     t.string   "role",                                  :default => "user"
+    t.integer  "region"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
