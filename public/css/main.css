@@ -1,0 +1,93 @@
+.container_12{
+    background-color: #6600ff;
+    background-image: url(../img/background.jpg);
+    background-repeat: no-repeat;
+}
+/*body{
+    background-color: #6600ff;
+    background-color: #060715;
+}*/
+#navigation{
+    border-style: solid;
+    border-width: 1px;
+
+    border-color: #33ff33;
+
+    -moz-border-radius: 11px;
+    -webkit-border-radius: 11px;
+    border-radius:11px;
+}
+#region_chooser{
+    border-style: solid;
+    border-width: 1px;
+
+    border-color: #ff3333;
+
+    -moz-border-radius: 11px;
+    -webkit-border-radius: 11px;
+    border-radius:11px;
+}
+#footer{
+    border-style: solid;
+    border-width: 1px;
+
+    border-color: #0033ff;
+}
+#main_frame{
+    border-style: solid;
+    border-width: 1px;
+
+    border-color: #00ffff;
+
+    -moz-border-radius: 11px;
+    -webkit-border-radius: 11px;
+    border-radius:11px;   
+}
+#description{
+
+    /*    background-color: #6666ff;*/
+    padding-left: 30px;
+    font-size: 18px;
+}
+
+#main_list{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #cc33ff;
+    -moz-border-radius: 11px;
+    -webkit-border-radius: 11px;
+    border-radius:11px;   
+
+}
+.element_list{
+    float: left;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #00ff00;
+    -moz-border-radius: 11px;
+    -webkit-border-radius: 11px;
+    border-radius:11px;   
+
+    width: 300px;
+    height: 180px;
+    margin-left: 8px;
+    margin-top: 8px;
+    
+    
+    background-image: url(../img/dom.jpg);
+    background-repeat: no-repeat;
+}
+.list_text{
+    background-color: #333333;
+    color: #ffffff;
+    bottom: 1px;
+}
+.buy_it{
+    
+    position:relative;top:110px;left:250px;
+    background-color: #cc00ff;
+    width: 50px;
+    height: 30px;
+    font-size: 18px;
+   
+}

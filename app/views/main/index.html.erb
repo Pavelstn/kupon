@@ -1,4 +1,22 @@
-<% @promotions.each do |promotion| %>
-<%= promotion.category.name%>. <%= promotion.title %> <%= promotion.costs %> <%= link_to 'More', promotion %>
-<hr>
-<% end %>
+<div class="clear"></div>
+<div class="grid_12" id="main_frame">
+  <img src="/img/gorod.jpg">
+  <div id="description">
+    Туризм и путешествия. 8 дней и 7 ночей в Римини. Скидка до 50% More
+  </div>
+</div>
+
+<div class="clear"></div>
+<div class="grid_12" id="main_list">
+  <% @promotions.each do |promotion| %>
+    <div class="element_list">
+
+      <div class="list_text">
+        <%= promotion.category.name%>. <%= promotion.title %> <%= promotion.costs %> 
+      </div>
+      <div class="buy_it">
+        <%= link_to 'More', promotion %>
+      </div>
+    </div>
+  <% end %>
+</div>

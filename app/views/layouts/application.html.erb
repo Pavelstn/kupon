@@ -24,6 +24,8 @@
     <!-- CSS: implied media=all -->
     <!-- CSS concatenated and minified via ant build script-->
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/960.css">
+    <link rel="stylesheet" href="/css/main.css">
 
 
     <%= stylesheet_link_tag    "application" %>
@@ -39,38 +41,50 @@
     <script src="/js/libs/modernizr-2.0.6.min.js"></script>
   </head>
 
-  <body>
+  <body style="background-color: #060715">
 
-    <div id="container">
-      <header>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        <a href="/main/index">Главная</a>|
-        <a href="/promotions">Акции</a>|
-        <a href="/akupons">Мои купоны</a>|
-        <a href="/categories">Категории</a>
-        <a href="/regions">Регионы</a>
+    <div class="container_12">
+      <div id="container">
 
-        <% if user_signed_in? %>
-          user: <%= current_user.email %>|
-          id: <%= current_user.id %>|
-          role: <%= current_user.role %>|
-          <%= link_to('logout', destroy_user_session_path, :method => 'delete') %>|
-        <% else %>
-          <a href="/users/sign_in">login</a>|
-          <a href="/users/sign_up">register</a>|
-        <% end %>
-          <hr>
+        <header>
+          <div class="grid_12" id="navigation">
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+            <a href="/main/index">Главная</a>|
+            <a href="/promotions">Акции</a>|
+            <a href="/akupons">Мои купоны</a>|
+            <a href="/categories">Категории</a>
+            <a href="/regions">Регионы</a>
 
-      </header>
-      <div id="main" role="main">
-        <%= yield %>
-      </div>
-      <footer>
+            <% if user_signed_in? %>
+              user: <%= current_user.email %>|
+              id: <%= current_user.id %>|
+              role: <%= current_user.role %>|
+              <%= link_to('logout', destroy_user_session_path, :method => 'delete') %>|
+            <% else %>
+              <a href="/users/sign_in">login</a>|
+              <a href="/users/sign_up">register</a>|
+            <% end %>
+          </div>
+          <div class="clear"></div>
+          <div class="grid_12" id="region_chooser">
+            Майкоп  
 
-      </footer>
-    </div> <!--! end of #container -->
+          </div>
+        </header>
+        <div class="clear"></div>
+        <%#*<div class="grid_12" id="main" role="main">%>
+          <%= yield %>
+        <%#*</div>%>
+        <footer>
+          <div class="clear"></div>
+          <div class="grid_12" id="footer">
+            asd
+          </div>
 
+        </footer>
+      </div> <!--! end of #container -->
+    </div> <!--! end of #container_12 -->
 
     <!-- JavaScript at the bottom for fast page loading -->
 
