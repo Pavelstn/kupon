@@ -1,6 +1,6 @@
 .container_12{
     background-color: #6600ff;
-    background-image: url(../img/background.jpg);
+/*    background-image: url(../img/background.jpg);*/
     background-repeat: no-repeat;
 }
 /*body{
@@ -43,6 +43,22 @@
     -webkit-border-radius: 11px;
     border-radius:11px;   
 }
+
+#category_frame{
+    border-style: solid;
+    border-width: 1px;
+
+    border-color: #00ff33;;
+
+    -moz-border-radius: 11px;
+    -webkit-border-radius: 11px;
+    border-radius:11px;   
+
+}
+
+
+
+
 #description{
 
     /*    background-color: #6666ff;*/
@@ -72,8 +88,8 @@
     height: 180px;
     margin-left: 8px;
     margin-top: 8px;
-    
-    
+
+
     background-image: url(../img/dom.jpg);
     background-repeat: no-repeat;
 }
@@ -83,11 +99,16 @@
     bottom: 1px;
 }
 .buy_it{
-    
+
     position:relative;top:110px;left:250px;
     background-color: #cc00ff;
     width: 50px;
     height: 30px;
     font-size: 18px;
-   
+
+}
+a {
+
+    font-size: 14px;
+    color: #ffffff;
 }

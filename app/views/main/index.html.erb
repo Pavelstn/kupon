@@ -1,9 +1,12 @@
+
+
+
 <div class="clear"></div>
-<div class="grid_12" id="main_frame">
-  <img src="/img/gorod.jpg">
-  <div id="description">
-    Туризм и путешествия. 8 дней и 7 ночей в Римини. Скидка до 50% More
-  </div>
+<div class="grid_12" id="category_frame">
+<% @categories.each do |category| %>
+  <%= link_to category.name, category %>
+  <%#= category.name%>
+  <% end %>
 </div>
 
 <div class="clear"></div>

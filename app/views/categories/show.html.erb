@@ -34,7 +34,18 @@
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
 <hr>
-<% @category.promotion.each do |promotion| %>
-<%= promotion.title %> <%= promotion.costs %> <%= link_to 'More', promotion %>
-<hr>
-<% end %>
+
+<div class="clear"></div>
+<div class="grid_12" id="main_list">
+  <% @category.promotion.each do |promotion| %>
+    <div class="element_list">
+
+      <div class="list_text">
+        <%= promotion.title %> <%= promotion.costs %> 
+      </div>
+      <div class="buy_it">
+        <%= link_to 'More', promotion %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,6 +1,8 @@
 class MainController < ApplicationController
   def index
     @promotions = Promotion.all
+    @categories = Category.all
+  #  @regions = Region.all
 
     respond_to do |format|
       format.html # index.html.erb
