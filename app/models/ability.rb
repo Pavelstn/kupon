@@ -12,6 +12,10 @@ class Ability
     if user.role =="admin"
       can :manage, :all
     end
+    if user.role =="p_manager"
+      can :manage, Check
+    end
+    
     #    
     if user.role =="user"
       #      can :read, Region

@@ -1,0 +1,23 @@
+<h1>Проверка купона</h1>
+<%#= form_tag({:controller => "check", }, :method => "post", :class => "check_form") do %>
+
+
+<%= form_tag("/check", :method => "post") do %>
+  <%= label_tag(:u_code, "Код купона:") %>
+  <%= text_field(:u_code, :code, :value=>@code ) %>
+  <%= submit_tag("Проверить") %>
+<% end %>
+
+
+
+<% if @akupon %>
+<%= @akupon.promotion.title %>
+<%= @akupon.user.email %>
+<%= @akupon.use %>
+
+
+<h3>Активировать</h3>
+<% else %>
+<h1>Купон с таким кодом не найден</h1>
+<% end %>
+

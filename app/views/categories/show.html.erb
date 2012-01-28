@@ -9,26 +9,28 @@
   <b>Description:</b>
   <%= @category.description %>
 </p>
- <% if current_user.role=="admin" %>
-<p>
-  <b>Region:</b>
-  <%= @category.region_id %>
-</p>
+<% if user_signed_in? %>
+  <% if current_user.role=="admin" %>
+    <p>
+      <b>Region:</b>
+      <%= @category.region_id %>
+    </p>
 
-<p>
-  <b>Is avtive:</b>
-  <%= @category.is_avtive %>
-</p>
+    <p>
+      <b>Is avtive:</b>
+      <%= @category.is_avtive %>
+    </p>
 
-<p>
-  <b>Is delete:</b>
-  <%= @category.is_delete %>
-</p>
+    <p>
+      <b>Is delete:</b>
+      <%= @category.is_delete %>
+    </p>
 
-<p>
-  <b>Who delete:</b>
-  <%= @category.who_delete %>
-</p>
+    <p>
+      <b>Who delete:</b>
+      <%= @category.who_delete %>
+    </p>
+  <% end %>
 <% end %>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |

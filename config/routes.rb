@@ -1,4 +1,6 @@
 Kupon::Application.routes.draw do
+ # get "check/index"
+
   resources :regions
 
   resources :categories
@@ -11,6 +13,11 @@ Kupon::Application.routes.draw do
 
   resources :promotions
   match 'promotions/:id/buyit' => 'promotions#buyit', :id => :id
+  
+  get "check/index"
+  #post "check/index"
+  match 'check' => 'check#index'
+  #match 'check/:id' => 'check#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
