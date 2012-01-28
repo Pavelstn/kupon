@@ -6,11 +6,13 @@ class Ability
     can :read, Region
     can :read, Category
     can :read, Promotion
+    #can :read, CheckController
     
     # cannot :read, Akupon
     #    
     if user.role =="admin"
       can :manage, :all
+      can :read, CheckController
     end
     if user.role =="p_manager"
       can :manage, Check

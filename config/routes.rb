@@ -16,7 +16,7 @@ Kupon::Application.routes.draw do
   
   get "check/index"
   #post "check/index"
-  match 'check' => 'check#index'
+  match '/check' => 'check#index'
   #match 'check/:id' => 'check#index'
 
   # The priority is based upon order of creation:
