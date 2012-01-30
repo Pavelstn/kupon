@@ -5,12 +5,18 @@ class PromotionsController < ApplicationController
   #before_filter :authenticate_user!, :only=>[:show]
   before_filter :authenticate_user!, :except => [:index, :show]
   def index
-    @promotions = Promotion.all
+    if current_user.role== 'admin'
+      @promotions = Promotion.all
+      render :template => 'promotions/index_admin'
+    else
+      @promotions = Promotion.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @promotions }
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @promotions }
+      end
     end
+
   end
 
   # GET /promotions/1

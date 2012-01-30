@@ -5,14 +5,18 @@ class AkuponsController < ApplicationController
   # GET /akupons
   # GET /akupons.json
   def index
-    # authorize! :index, Akupon
-    @akupons = Akupon.where(:user_id => current_user.id)
-    #   @akupons = Akupon.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @akupons }
+    if current_user.role== 'admin'
+      @akupons = Akupon.all
+      render :template => 'akupons/index_admin'
+    else   #for not admin
+      @akupons = Akupon.where(:user_id => current_user.id)
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @akupons }
+      end
     end
+ 
+
   end
 
   # GET /akupons/1
@@ -25,15 +29,26 @@ class AkuponsController < ApplicationController
     #        flash[:notice] = e.message
     #      end
     #    
-    begin
-      @akupon = Akupon.where(:user_id => current_user.id, :id=>params[:id]).first
-      respond_to do |format|
-        format.html # show.html.erb
-        format.json { render json: @akupon }
+    
+    if current_user.role== 'admin'
+      begin
+        @akupon = Akupon.find(params[:id])
+        render :template => 'akupons/show_admin'
+      rescue
+        redirect_to akupons_url
       end
-    rescue
-      redirect_to akupons_url
+    else   #for not admin
+      begin
+        @akupon = Akupon.where(:user_id => current_user.id, :id=>params[:id]).first
+        respond_to do |format|
+          format.html # show.html.erb
+          format.json { render json: @akupon }
+        end
+      rescue
+        redirect_to akupons_url
+      end
     end
+
     
     
     #    #@akupon = Akupon.find(2)

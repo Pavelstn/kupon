@@ -1,0 +1,35 @@
+<h1>Listing akupons ADMIN MODE</h1>
+
+<table>
+  <tr>
+    <th>Promotion</th>
+    <th>User</th>
+    <th>Purchase</th>
+    <th>Use</th>
+    <th>Unique code</th>
+    <th>Is delete</th>
+    <th>Is canceled</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @akupons.each do |akupon| %>
+  <tr>
+    <td><%= akupon.promotion.title %></td>
+    <td><%= akupon.user.email %></td>
+    <td><%= akupon.purchase %></td>
+    <td><%= akupon.use %></td>
+    <td><%= akupon.unique_code %></td>
+    <td><%= akupon.is_delete %></td>
+    <td><%= akupon.is_canceled %></td>
+    <td><%= link_to 'Show', akupon %></td>
+    <td><%= link_to 'Edit', edit_akupon_path(akupon) %></td>
+    <td><%= link_to 'Destroy', akupon, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Akupon', new_akupon_path %>

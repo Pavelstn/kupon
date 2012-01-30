@@ -1,4 +1,4 @@
-<%= link_to 'Назад', akupons_path %>
+<h1>Admin Mode</h1>
 <p id="notice"><%= notice %></p>
 Купон куплен
 <p>
@@ -35,4 +35,7 @@
   <b>Is canceled:</b>
   <%= @akupon.is_canceled %>
 </p>
-<%= link_to 'Назад', akupons_path %>
+
+
+<%= link_to 'Edit', edit_akupon_path(@akupon) %> |
+<%= link_to 'Back', akupons_path %>
