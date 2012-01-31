@@ -1,4 +1,5 @@
 class AkuponsController < ApplicationController
+  require 'rqrcode'
   before_filter :authenticate_user!
   #check_authorization
   load_and_authorize_resource
@@ -40,6 +41,8 @@ class AkuponsController < ApplicationController
     else   #for not admin
       begin
         @akupon = Akupon.where(:user_id => current_user.id, :id=>params[:id]).first
+        
+        @qr = RQRCode::QRCode.new(@akupon.unique_code)
         respond_to do |format|
           format.html # show.html.erb
           format.json { render json: @akupon }

@@ -25,6 +25,8 @@ gem "ckeditor"
 
 gem 'jquery-rails'
 
+gem 'rqrcode'   #qr code
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

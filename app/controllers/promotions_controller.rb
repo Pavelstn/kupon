@@ -97,7 +97,15 @@ class PromotionsController < ApplicationController
     @akupon.promotion_id=params[:id]
     @akupon.user_id=current_user.id
     @akupon.purchase= Date.today
-    @akupon.unique_code="safdfjioewroiwyr"
+    
+    array= [0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0]
+    rand_array= array.sort{ rand() - 0.5 }
+    u_code= rand_array[ 0..9 ]
+    @akupon.unique_code= u_code.join(sep=$,) 
+    #@akupon.unique_code="safdfjioewroiwyr"
+    
+    
+    
     @akupon.is_canceled= false
     @akupon.is_delete= false
     @akupon.save
