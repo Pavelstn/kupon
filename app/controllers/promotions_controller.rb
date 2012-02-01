@@ -2,10 +2,35 @@ class PromotionsController < ApplicationController
   # GET /promotions
   # GET /promotions.json
   load_and_authorize_resource
+
   #before_filter :authenticate_user!, :only=>[:show]
   before_filter :authenticate_user!, :except => [:index, :show]
   def index
-    if current_user.role== 'admin'
+    #    if current_user
+    #      if session[:guest_user_id]
+    #        logging_in
+    #        guest_user.destroy
+    #        session[:guest_user_id] = nil
+    #      end
+    #      current_user
+    #    else
+    #      current_user = User.create(:name => "guest", :email => "guest_#{Time.now.to_i}#{rand(99)}@email_address.com", :role=>"guest")
+    #      current_user.save()
+    #    end
+
+#    if (defined?(current_user.role)).nil?
+#      current_user = User.create(:name => "guest", :email => "guest_#{Time.now.to_i}#{rand(99)}@email_address.com", :role=>"guest")
+#      current_user.save()
+#    end
+    
+#       unless current_user.respond_to?('role')
+#          # current_user.role='guest'
+#          current_user = User.create(:name => "guest", :email => "guest_#{Time.now.to_i}#{rand(99)}@email_address.com", :role=>"guest")
+#          current_user.save()
+#          flash[:notice]="sdfsdfsdf"
+#        end
+    #current_or_guest_user
+    if current_or_guest_user.role== 'admin'
       @promotions = Promotion.all
       render :template => 'promotions/index_admin'
     else
