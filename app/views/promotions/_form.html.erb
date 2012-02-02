@@ -13,7 +13,8 @@
 
   <div class="field">
     <%= f.label :region_id %><br />
-    <%= f.number_field :region_id %>
+    <%#= f.number_field :region_id %>
+    <%= f.select(:region_id, Region.all.collect {|p| [ p.name_region, p.id ] })%>
   </div>
   <div class="field">
     <%= f.label :partner_id %><br />

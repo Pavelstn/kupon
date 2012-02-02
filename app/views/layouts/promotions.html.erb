@@ -47,38 +47,14 @@
       <div id="container">
 
         <header>
-          <div class="grid_12" id="navigation">
-            <p class="notice"><%= notice %></p>
-            <p class="alert"><%= alert %></p>
-            <a href="/main/index">Главная</a>|
-            <a href="/promotions">Акции</a>|
-            <a href="/akupons">Мои купоны</a>|
-            <a href="/categories">Категории</a>
-            <a href="/regions">Регионы</a>
-            <a href="/check">Проверка купона</a>
-
-            <% if user_signed_in? %>
-              user: <%= current_user.email %>|
-              id: <%= current_user.id %>|
-              role: <%= current_user.role %>|
-              <%= link_to('logout', destroy_user_session_path, :method => 'delete') %>|
-            <% else %>
-              <a href="/users/sign_in">login</a>|
-              <a href="/users/sign_up">register</a>|
-            <% end %>
-          </div>
-          <div class="clear"></div>
-          <div class="grid_12" id="region_chooser">
-            Майкоп  
-
-          </div>
+          <%= render "shared/menu" %>
         </header>
 
 
         <div class="clear"></div>
-<%#*<div class="grid_12" id="main" role="main">%>
+
         <%= yield %>
-<%#*</div>%>
+
         <footer>
           <div class="clear"></div>
           <div class="grid_12" id="footer">

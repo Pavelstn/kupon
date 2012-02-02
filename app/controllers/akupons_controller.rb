@@ -23,14 +23,7 @@ class AkuponsController < ApplicationController
   # GET /akupons/1
   # GET /akupons/1.json
   def show
-    #          begin
-    #        user.destroy
-    #        flash[:notice] = "User #{user.name} deleted"
-    #      rescue Exception => e
-    #        flash[:notice] = e.message
-    #      end
-    #    
-    
+
     if current_user.role== 'admin'
       begin
         @akupon = Akupon.find(params[:id])
